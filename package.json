@@ -1,0 +1,60 @@
+{
+  "name": "vitepress-plugin-annotations",
+  "version": "0.0.1",
+  "description": "A VitePress plugin for adding numbered annotations to code blocks.",
+  "keywords": [
+    "vitepress",
+    "vitepress-plugin"
+  ],
+  "homepage": "https://github.com/its-miroma/vpa",
+  "bugs": {
+    "url": "https://github.com/its-miroma/vpa/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Miroma",
+    "url": "https://github.com/its-miroma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/its-miroma/vpa.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
+    },
+    "./client/style.css": {
+      "import": "./dist/client/style.css",
+      "types": "./dist/client/style.css.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsdown --minify",
+    "dev": "tsdown --watch",
+    "format": "oxfmt .",
+    "lint": "oxlint ."
+  },
+  "devDependencies": {
+    "oxc-minify": "^0.82.3",
+    "oxfmt": "^0.52.0",
+    "oxlint": "^1.67.0",
+    "tsdown": "^0.22.0",
+    "typescript": "^6.0.3",
+    "vitepress": "^2.0.0-alpha.12"
+  },
+  "peerDependencies": {
+    "vitepress": ">=1"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.5.1",
+      "onFail": "download"
+    }
+  }
+}

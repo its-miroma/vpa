@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": [],
+  "operatorPosition": "start", // unsupported for now
+  "quoteProps": "consistent",
+  "trailingComma": "es5"
+}

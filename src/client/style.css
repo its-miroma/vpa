@@ -1,0 +1,76 @@
+[class*="language-"]:has(+ ol.info.custom-block) {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+[class*="language-"] + ol.info.custom-block {
+  margin-top: 0;
+}
+
+ol.info.custom-block {
+  border-radius: 0 0 8px 8px;
+  padding-bottom: 20px;
+}
+
+li[data-annotation] {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+li[data-annotation] > span {
+  overflow-x: hidden;
+}
+
+:is(a[data-annotation], li[data-annotation] > a) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  flex-shrink: 0;
+  top: -0.15rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--vp-button-brand-bg);
+  color: var(--vp-button-brand-text) !important;
+  font-size: 0.75em;
+  font-weight: bold;
+  font-family: var(--vp-font-family-mono);
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(a[data-annotation], li[data-annotation] > a) {
+    transition: none;
+  }
+}
+
+a[data-annotation] {
+  margin-inline: 1ch;
+}
+
+:is(a[data-annotation], li[data-annotation] > a):focus-visible {
+  outline: 2px solid var(--vp-button-brand-bg);
+  outline-offset: 2px;
+}
+
+:is(a[data-annotation], li[data-annotation] > a):hover {
+  background-color: var(--vp-button-brand-hover-bg);
+  color: var(--vp-button-brand-hover-text);
+  transform: scale(1.15);
+}
+
+:is(a[data-annotation], li[data-annotation] > a):active {
+  background-color: var(--vp-button-brand-active-bg);
+  color: var(--vp-button-brand-active-text);
+  transform: scale(0.95);
+}
